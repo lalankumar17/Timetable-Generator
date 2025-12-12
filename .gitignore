@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage
+
+# Production
+build/
+dist/
+target/
+
+# Misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# Maven
+mvnw
+mvnw.cmd
+.mvn/wrapper/maven-wrapper.properties
+
+# SECURITY: Never hardcode credentials in application.properties
+# All secrets (MAIL_PASSWORD, MONGO_URI, etc.) must only be set
+# as Environment Variables in Render dashboard — never in source code.
+# Reference them in application.properties as: ${ENV_VAR_NAME} with NO fallback value.
