@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* Force Light Mode Styles for Login Page regardless of global theme */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* User provided background image */
+    background: url('/login_bg.png') no-repeat center center fixed !important;
+    background-size: cover !important;
+    font-family: 'Outfit', sans-serif;
+    color: #1e293b !important;
+}
+
+/* Removed previous ::before as the main background handles it now */
+.login-page::before {
+    display: none;
+}
+
+.login-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    padding: 2rem 2.5rem;
+    /* Increased slightly */
+    /* Reduced from 4rem */
+    /* Increased vertical padding */
+    max-width: 450px;
+    /* Decreased to 450px */
+    min-height: 580px;
+    /* Increased to 550px */
+    /* Reduced from 600px */
+    /* Enforce taller card */
+    display: flex;
+    /* Flex to justify content if needed */
+    flex-direction: column;
+    justify-content: center;
+    background: #ffffff !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    /* Left align for desktop too */
+}
+
+.login-header {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.nitte-logo {
+    max-width: 420px;
+    /* Increased from 380px */
+    width: 100%;
+    /* Ensure it takes up space */
+    height: auto;
+    margin-bottom: 1.5rem;
+    /* Match mobile spacing */
+    display: block;
+}
+
+.login-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #1e293b;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Specificity override for inputs */
+/* Specificity override for inputs */
+.login-page .form-group input {
+    width: 100%;
+    padding: 1.35rem 1rem;
+    padding-left: 2.8rem;
+    /* Space for left icon */
+    padding-right: 2.5rem;
+    /* Space for right icon (eye) */
+    background-color: #ffffff !important;
+    border: 1px solid #94a3b8 !important;
+    border-radius: 10px;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #334155 !important;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.login-page .form-group input::placeholder {
+    color: #64748b !important;
+    opacity: 1;
+}
+
+.login-page .form-group input:focus {
+    border-color: #1e3a8a !important;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+.password-wrapper,
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #cbd5e1;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Hide icon when input has content (placeholder is not shown) */
+.login-page .form-group input:not(:placeholder-shown)+.input-icon {
+    display: none;
+}
+
+/* Reset padding when icon is hidden so text starts from left */
+.login-page .form-group input:not(:placeholder-shown) {
+    padding-left: 1rem;
+}
+
+.password-toggle-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #64748b;
+    padding: 0;
+}
+
+.password-toggle-icon:hover {
+    color: #334155;
+}
+
+/* Increased specificity for login button */
+/* Increased specificity for login button */
+.login-page .login-button {
+    width: auto;
+    padding: 0.6rem 2rem;
+    background: transparent !important;
+    color: #1e40af !important;
+    /* Blue text */
+    border: 1px solid #1e40af !important;
+    /* Blue border */
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    align-self: center;
+    /* Centered like the content above */
+}
+
+.login-page .login-button:hover {
+    background: #1e40af !important;
+    color: #ffffff !important;
+}
+
+.login-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    background: transparent;
+    color: #94a3b8 !important;
+    border-color: #94a3b8;
+}
+
+.forgot-password-container {
+    text-align: left;
+    margin-top: 0.5rem;
+}
+
+/* Specificity override for link */
+.login-page .forgot-password {
+    color: #10b981 !important;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.login-page .forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-footer {
+    margin-top: 2rem;
+    text-align: center;
+    border-top: 1px solid #cbd5e1;
+    /* Darker horizontal line */
+    padding-top: 1.5rem;
+}
+
+.login-footer a {
+    color: #1877f2 !important;
+    text-decoration: none !important;
+    font-weight: 600;
+}
+
+.login-footer a:hover {
+    text-decoration: underline !important;
+}
+
+.signup-prompt {
+    font-size: 1rem;
+    color: #64748b;
+    /* Slate-500 */
+    margin: 0;
+}
+
+.signup-link {
+    color: #1877f2;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 0.25rem;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    background: #fef2f2;
+    border: 1px solid #fee2e2;
+    color: #ef4444;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    text-align: left;
+}
+
+@media (max-width: 600px) {
+    .login-page {
+        /* Restore background image/color so card stands out */
+        background: url('/login_bg.png') no-repeat center center fixed !important;
+        background-size: cover !important;
+        /* Or use a fallback color if image fails */
+        background-color: #f1f5f9 !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 1rem !important;
+        /* Padding around the card */
+        height: 100vh !important;
+        /* Ensure full height */
+    }
+
+    .login-container {
+        padding: 4rem 1.5rem !important;
+        /* Slight increase from previous step */
+        margin: 0 !important;
+        min-height: 500px !important;
+        /* Verified min-height */
+        width: 92% !important;
+        /* Increased width */
+        max-width: 400px !important;
+        /* Increased max-width */
+        background: #ffffff !important;
+        /* White card background */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+        /* Restore shadow */
+        border-radius: 16px !important;
+        /* Rounded corners */
+        justify-content: center !important;
+        /* Center content vertically */
+    }
+
+    .login-header {
+        margin-bottom: 0.5rem !important;
+        text-align: left !important;
+        /* Align content to left */
+        width: 100% !important;
+        /* Ensure full width */
+    }
+
+    .nitte-logo {
+        max-width: 330px !important;
+        /* Increased logo size further */
+        margin-bottom: 1.5rem !important;
+        /* Increased spacing between logo and subtitle further */
+        margin-left: 0 !important;
+        /* Align to left edge */
+        display: block !important;
+        /* Ensure block behavior */
+    }
+
+    .login-subtitle {
+        font-size: 1.5rem !important;
+        font-weight: 400 !important;
+        /* Unbold: was 500 */
+        color: #1e293b !important;
+        margin-top: 0 !important;
+        margin-bottom: 2rem !important;
+        /* Spacing below subtitle */
+    }
+
+    .login-form {
+        gap: 1.2rem !important;
+        /* Increase gap between inputs for height */
+    }
+
+    .login-header {
+        margin-bottom: 0.5rem !important;
+    }
+
+    .login-page .form-group input {
+        padding: 1rem 1rem !important;
+        /* Increased padding */
+        padding-left: 2.5rem !important;
+        padding-right: 2.5rem !important;
+        font-size: 1rem !important;
+        /* Restore font size */
+    }
+
+    .login-page::before {
+        display: none !important;
+    }
+
+    .login-footer {
+        margin-top: 2rem !important;
+        /* Increase footer margin for height */
+        padding-top: 1rem !important;
+        border-top: 1px solid #cbd5e1 !important;
+    }
+
+    /* Register Page Specific Mobile Overrides */
+    .register-container {
+        padding: 2rem 1.5rem !important;
+        /* Less padding than login to keep it shorter */
+        min-height: auto !important;
+        /* Let content dictate height */
+    }
+
+    .register-container .login-header {
+        margin-bottom: 1rem !important;
+    }
+}
+
+@media (max-height: 700px) and (max-width: 480px) {
+
+    /* Specific adjustments for short mobile screens */
+    .nitte-logo {
+        max-width: 200px;
+        /* Even smaller logo */
+        margin-bottom: 1.5rem;
+    }
+
+    .login-container {
+        padding: 1rem 0.8rem;
+    }
+
+    .login-page .form-group input {
+        padding: 0.8rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+}
+
+/* Forgot Password Page specific overrides */
+.center-aligned-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.centered-label-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    /* Reduced margin */
+    color: #64748b;
+    /* Slate-500 for label text */
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* Icon inside input styling */
+.centered-icon-inside {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    /* Let clicks pass through to input */
+}
+
+.centered-input-with-icon {
+    text-align: left;
+    padding-left: 3rem !important;
+    /* Make room for icon */
+}
+
+.centered-icon {
+    width: 32px !important;
+    height: 32px !important;
+    color: #0f172a;
+    /* Darker color for icon */
+}
+
+/* Specific styling for the Back to Login link */
+/* Specific styling for the Back to Login button */
+.back-to-login-link {
+    display: inline;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #10b981 !important;
+    /* Emerald-500 Green */
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    margin-left: 0.25rem;
+}
+
+
+
+/* Validation styles */
+.login-page .form-group input.input-error {
+    border-color: #ef4444 !important;
+}
+
+.validation-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.login-footer a {
+    color: #1877f2 !important;
+    text-decoration: none !important;
+    font-weight: 600;
+}
+
+.login-footer a:hover {
+    text-decoration: underline !important;
+}

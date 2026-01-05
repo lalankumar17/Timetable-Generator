@@ -1,0 +1,454 @@
+/* Dark Mode Variables */
+body.dark {
+	--background: #0f172a;
+	--textColor: #f1f5f9;
+	--textColor2: #cbd5e1;
+	--containerColor: #1e293b;
+	--foregroudColor: #0f172a;
+	--borderColor: #475569;
+	--surfaceBorder: #334155;
+	--surfaceShadow: 0 10px 24px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.22);
+	--surfaceShadowSm: 0 4px 12px rgba(0, 0, 0, 0.22), 0 1px 3px rgba(0, 0, 0, 0.18);
+	--menubarIconContainerColor: rgba(255, 255, 255, 0.1);
+	--inputPlaceholderColor: rgba(255, 255, 255, 0.6);
+	--tagIconColor: rgba(255, 255, 255, 0.7);
+	--accentColor: var(--userAccentColor, #60a5fa);
+	--edu-blue: var(--userAccentColor, #60a5fa);
+
+	--tableHeaderColor: #1e293b;
+	--greenText: #4ade80;
+	--tagBgColor: #334155;
+	--bgColor2: #334155;
+
+	/* Edu Theme Variables Dark Overrides */
+	--edu-dark: #f8fafc;
+	--edu-slate: #cbd5e1;
+	--edu-light: #1e293b;
+	--edu-border: #475569;
+	--edu-blue: #60a5fa;
+	--inputBg: #1e293b;
+	--hoverColor: #334155;
+
+	/* Button and Interactive Elements */
+	--buttonPrimaryBg: #3b82f6;
+	--buttonPrimaryHover: #2563eb;
+	--buttonSecondaryBg: #f97316;
+	--buttonSecondaryHover: #ea580c;
+	--buttonTextColor: #ffffff;
+
+	/* Card and Panel Colors */
+	--cardBg: #1e293b;
+	--cardHoverBg: #334155;
+
+	/* Shadow for Dark Mode */
+	--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+	--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5);
+	--shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5);
+}
+
+/* Light Mode Variables (Default) */
+:root,
+body.light {
+	--background: #ffffff;
+	--textColor: #1e293b;
+	--textColor2: #64748b;
+	/* Added for consistency */
+	--containerColor: #ffffff;
+	--foregroudColor: #f1f5f9;
+	--borderColor: #cbd5e1;
+	--surfaceBorder: #cbd5e1;
+	--surfaceShadow: 0 10px 24px rgba(15, 23, 42, 0.06), 0 2px 8px rgba(15, 23, 42, 0.04);
+	--surfaceShadowSm: 0 6px 16px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.04);
+	--menubarIconContainerColor: #f1f5f9;
+	--inputPlaceholderColor: #94a3b8;
+	--tagIconColor: rgba(0, 0, 0, 0.5);
+	--accentColor: var(--userAccentColor, #2563eb);
+	--edu-blue: var(--userAccentColor, #2563eb);
+
+	--tableHeaderColor: #f8fafc;
+	--greenText: #16a34a;
+	--tagBgColor: var(--containerColor);
+	--bgColor2: #e2e8f0;
+
+	/* Edu Theme Variables */
+	--edu-dark: #1e293b;
+	--edu-slate: #64748b;
+	--edu-light: #f8fafc;
+	--edu-border: #e2e8f0;
+	--inputBg: #ffffff;
+	--hoverColor: #f1f5f9;
+}
+
+.app {
+	display: grid;
+	height: 100vh;
+	width: 100%;
+	background: var(--background);
+	grid-template-columns: 1fr;
+	grid-template-rows: 64px minmax(0, 1fr);
+	transition: background-color 0.25s ease;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.app.settings-no-scrollbar {
+	overflow: hidden;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.app.settings-no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+.app.settings-no-scrollbar .main-container,
+.app.settings-no-scrollbar .settings-page {
+	overflow: hidden !important;
+}
+
+.app.profile-no-scrollbar {
+	overflow: hidden !important;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.app.profile-no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+.app.profile-no-scrollbar .main-container,
+.app.profile-no-scrollbar .profile-page {
+	overflow: hidden !important;
+}
+
+.app.profile-no-scrollbar .main-container {
+	min-height: calc(100vh - 64px);
+	padding-bottom: 0.5rem;
+}
+
+.app.dashboard-no-scrollbar {
+	overflow: hidden !important;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.app.dashboard-no-scrollbar::-webkit-scrollbar {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+.app.dashboard-no-scrollbar .main-container {
+	overflow: hidden !important;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.app.dashboard-no-scrollbar .main-container::-webkit-scrollbar {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+.app.published-timetable-no-page-scroll {
+	overflow: hidden !important;
+}
+
+.app.published-timetable-no-page-scroll .main-container {
+	overflow: hidden !important;
+	min-height: calc(100vh - 64px);
+}
+
+.app.exam-timetable-hide-outer-scrollbar {
+	overflow: hidden !important;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.app.exam-timetable-hide-outer-scrollbar::-webkit-scrollbar {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+.app.exam-timetable-hide-outer-scrollbar .main-container {
+	overflow: hidden !important;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.app.exam-timetable-hide-outer-scrollbar .main-container::-webkit-scrollbar {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+
+html,
+body {
+	overflow-x: hidden;
+}
+
+body.docs-window-lock {
+	overflow-y: hidden;
+}
+
+body.docs-window-lock .main-container {
+	padding: 0;
+}
+
+body.profile-window-lock {
+	overflow: hidden;
+}
+
+body.profile-window-lock::-webkit-scrollbar {
+	display: none;
+}
+
+::-webkit-scrollbar {
+	width: 15px;
+	height: 15px;
+	background-color: #0f1722;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #a9b3c0;
+	border-radius: 999px;
+	border: 3px solid #1f2a39;
+	min-height: 34px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #bcc5d0;
+}
+
+::-webkit-scrollbar-track {
+	background: #2f3c50;
+	box-shadow: inset 0 0 0 2px #243042;
+}
+
+::-webkit-scrollbar-button:single-button {
+	display: block;
+	height: 22px;
+	background-color: #1a2433;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 11px 11px;
+	border: none;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath fill='%2395a3b4' d='M5 2 9 7H1z'/%3E%3C/svg%3E");
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath fill='%2395a3b4' d='M1 3h8L5 8z'/%3E%3C/svg%3E");
+}
+
+
+.main-container {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	min-height: calc(100vh - 64px + 60px);
+	padding: 1.1rem;
+	box-sizing: border-box;
+	gap: 10px;
+	justify-content: stretch;
+	max-height: none;
+	overflow-y: visible;
+	scrollbar-width: auto;
+	-ms-overflow-style: auto;
+}
+
+.page {
+	flex-grow: 1;
+	display: flex;
+	box-sizing: border-box;
+}
+
+.main-container .top-sub-container {
+	width: 100%;
+	height: 100%;
+	flex-grow: 1;
+	box-sizing: border-box;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.table td:not(:last-child) {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.col-2 {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+}
+
+
+.hoverBgEffect:hover {
+	background: var(--borderColor);
+}
+
+
+@media (max-width: 768px) {
+	.col-md-1 {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 850px) {
+	:root {
+		font-size: 15px;
+	}
+
+	.hide-able {
+		display: none;
+	}
+
+	/* Show menu labels when sidebar is open on mobile */
+	.menubar-container .hide-able {
+		display: block;
+	}
+}
+
+@media (max-width: 800px) {
+	.app {
+		display: block;
+		height: auto;
+		min-height: 100vh;
+		overflow-x: hidden;
+	}
+
+	.main-container {
+		width: 100%;
+		height: auto;
+		min-height: auto;
+		max-height: none;
+		overflow-y: visible;
+		overflow-x: hidden;
+		padding-top: calc(64px + 1.1rem);
+	}
+}
+
+/* ===== COMPREHENSIVE DARK MODE STYLING ===== */
+/* Ensuring all buttons, text, and interactive elements are clearly visible */
+
+body.dark {
+	background: var(--foregroudColor);
+	color: var(--textColor);
+}
+
+body.dark button {
+	color: var(--buttonTextColor);
+}
+
+body.dark select,
+body.dark textarea {
+	background: var(--inputBg);
+	color: var(--textColor);
+	border-color: var(--borderColor);
+}
+
+body.dark select:focus,
+body.dark textarea:focus {
+	border-color: var(--accentColor);
+}
+
+body.dark a {
+	color: var(--accentColor);
+}
+
+body.dark a:hover {
+	color: #93c5fd;
+}
+
+body.dark table {
+	background: var(--containerColor);
+	color: var(--textColor);
+}
+
+body.dark th {
+	background: var(--tagBgColor);
+	color: var(--textColor);
+}
+
+body.dark td {
+	border-color: var(--borderColor);
+	color: var(--textColor);
+}
+
+body.dark .hoverBgEffect:hover {
+	background: var(--hoverColor);
+}
+
+/* Ensure all SVG icons are visible in dark mode, but preserve brand-icons */
+body.dark svg:not([fill="none"]):not(.brand-icon) {
+	fill: var(--textColor2);
+}
+
+/* Primary button styling for dark mode */
+body.dark button[type="submit"],
+body.dark button.primary,
+body.dark .btn-primary {
+	background: var(--buttonPrimaryBg);
+	color: var(--buttonTextColor);
+	border: none;
+}
+
+body.dark button[type="submit"]:hover,
+body.dark button.primary:hover,
+body.dark .btn-primary:hover {
+	background: var(--buttonPrimaryHover);
+}
+
+/* Secondary button styling for dark mode */
+body.dark button.secondary,
+body.dark .btn-secondary {
+	background: var(--buttonSecondaryBg);
+	color: var(--buttonTextColor);
+	border: none;
+}
+
+body.dark button.secondary:hover,
+body.dark .btn-secondary:hover {
+	background: var(--buttonSecondaryHover);
+}
+
+/* Danger/Delete button styling */
+body.dark button.danger,
+body.dark .btn-danger {
+	background: #ef4444;
+	color: #ffffff;
+}
+
+body.dark button.danger:hover,
+body.dark .btn-danger:hover {
+	background: #dc2626;
+}
+
+/* Success button styling */
+body.dark button.success,
+body.dark .btn-success {
+	background: #10b981;
+	color: #ffffff;
+}
+
+body.dark button.success:hover,
+body.dark .btn-success:hover {
+	background: #059669;
+}
+
+/* Disabled state for dark mode */
+body.dark button:disabled,
+body.dark input:disabled,
+body.dark select:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+	background: #334155;
+	color: #94a3b8;
+}

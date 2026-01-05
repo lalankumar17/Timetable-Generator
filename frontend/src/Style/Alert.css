@@ -1,0 +1,93 @@
+.alert {
+    padding: 1rem;
+    border-radius: 0.4rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    position: fixed;
+    top: -10rem;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s;
+    border-width: 1px;
+    border-style: solid;
+    width: max-content;
+    max-width: 90%;
+}
+
+.alert.active {
+    top: calc(64px + 12px);
+    z-index: 2000;
+}
+
+.alert.success {
+    background: #d4edda;
+    color: #155724;
+    border-color: #155724;
+}
+
+.alert.warning {
+    background: #fff3cd;
+    color: #856404;
+    border-color: #856404;
+}
+
+.alert.error {
+    background: #f8d7da;
+    color: #721c24;
+    border-color: #721c24;
+}
+
+.alert p {
+    margin: 0;
+}
+
+.alert .close {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    align-self: center;
+}
+
+.alert.success .close svg path {
+    stroke: #155724;
+}
+
+.alert.warning .close svg path {
+    stroke: #856404;
+}
+
+.alert.error .close svg path {
+    stroke: #721c24;
+}
+
+/* Dark Mode Alert Styles */
+body.dark .alert.success {
+    background: #064e3b;
+    color: #6ee7b7;
+    border-color: #10b981;
+}
+
+body.dark .alert.warning {
+    background: #78350f;
+    color: #fcd34d;
+    border-color: #f59e0b;
+}
+
+body.dark .alert.error {
+    background: #7f1d1d;
+    color: #fca5a5;
+    border-color: #ef4444;
+}
+
+body.dark .alert.success .close svg path {
+    stroke: #6ee7b7;
+}
+
+body.dark .alert.warning .close svg path {
+    stroke: #fcd34d;
+}
+
+body.dark .alert.error .close svg path {
+    stroke: #fca5a5;
+}
