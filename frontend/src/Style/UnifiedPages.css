@@ -1,0 +1,471 @@
+/* ===== UNIFIED PAGE STYLES ===== */
+/* Consistent styling for all pages in the Exam Scheduler application */
+
+/* Base Page Container */
+.page {
+    padding: 1rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: auto;
+    height: fit-content;
+    overflow: hidden;
+}
+
+/* Page Header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.page-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--textColor, #333);
+}
+
+.page-title .title-icon {
+    font-size: 1.25rem;
+}
+
+.page-subtitle {
+    color: var(--textColor2, #666);
+    font-size: 0.9rem;
+    margin: 0.25rem 0 0 0;
+}
+
+/* Header Actions */
+.header-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+/* ===== CARD SYSTEM ===== */
+.content-card {
+    background: var(--containerColor, #fff);
+    border: 1px solid var(--surfaceBorder, #cbd5e1);
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: var(--surfaceShadowSm, 0 6px 16px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.04));
+    margin-bottom: 1rem;
+}
+
+.content-card h2,
+.content-card h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--textColor, #333);
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accentColor, #6366f1);
+}
+
+.content-card.sticky {
+    position: sticky;
+    top: 1rem;
+    height: fit-content;
+}
+
+/* ===== GRID LAYOUTS ===== */
+.two-column-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 1.5rem;
+}
+
+.three-column-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.stat-cards-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ===== STAT CARDS ===== */
+.stat-card {
+    background: var(--containerColor, #fff);
+    border: 1px solid var(--surfaceBorder, #cbd5e1);
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: var(--surfaceShadowSm, 0 6px 16px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.04));
+}
+
+/* Dark Mode for Unified Pages */
+body.dark .page {
+    background: var(--foregroudColor);
+    color: var(--textColor);
+}
+
+body.dark .page-title {
+    color: var(--textColor);
+}
+
+body.dark .page-subtitle {
+    color: var(--textColor2);
+}
+
+body.dark .content-card {
+    background: var(--containerColor);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .content-card h2,
+body.dark .content-card h3 {
+    color: var(--textColor);
+    border-bottom-color: var(--accentColor);
+}
+
+body.dark .stat-card {
+    background: var(--containerColor);
+    color: var(--textColor);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stat-card.primary {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+}
+
+.stat-card.success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+.stat-card.warning {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+}
+
+.stat-card.info {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+}
+
+.stat-icon {
+    font-size: 2rem;
+    opacity: 0.9;
+}
+
+.stat-content {
+    flex: 1;
+}
+
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+}
+
+.btn.primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.btn.secondary {
+    background: var(--foregroudColor, #f3f4f6);
+    color: var(--textColor, #333);
+    border: 1px solid var(--borderColor, #ddd);
+}
+
+.btn.secondary:hover {
+    background: var(--hoverColor, #e5e7eb);
+}
+
+.btn.success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+.btn.warning {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+}
+
+.btn.danger {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.btn-icon {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.btn-icon:hover {
+    opacity: 1;
+}
+
+/* ===== FORM ELEMENTS ===== */
+.form-group {
+    margin-bottom: 0.75rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    color: var(--textColor2, #666);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem 0.6rem;
+    border: 1px solid var(--borderColor, #ddd);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    background: var(--inputBg, #fff);
+    color: var(--textColor, #333);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accentColor, #6366f1);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-group input:disabled,
+.form-group select:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.form-row {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* ===== TABLES ===== */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.data-table th,
+.data-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--borderColor, #eee);
+}
+
+.data-table th {
+    background: var(--accentColor, #6366f1);
+    color: white;
+    font-weight: 500;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.data-table tbody tr:hover {
+    background: var(--hoverColor, #f9fafb);
+}
+
+.data-table .actions-cell {
+    white-space: nowrap;
+}
+
+/* ===== BADGES & TAGS ===== */
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.badge.primary {
+    background: var(--accentColor, #6366f1);
+    color: white;
+}
+
+.badge.success {
+    background: #d1fae5;
+    color: #059669;
+}
+
+.badge.warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.badge.danger {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* ===== EMPTY STATE ===== */
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--textColor2, #888);
+}
+
+.empty-state .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.empty-state p {
+    margin: 0.35rem 0;
+}
+
+/* ===== ALERTS ===== */
+.alert-box {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.alert-box.info {
+    background: #dbeafe;
+    border: 1px solid #3b82f6;
+    color: #1e40af;
+}
+
+.alert-box.success {
+    background: #d1fae5;
+    border: 1px solid #10b981;
+    color: #065f46;
+}
+
+.alert-box.warning {
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+    color: #92400e;
+}
+
+.alert-box.error {
+    background: #fee2e2;
+    border: 1px solid #ef4444;
+    color: #991b1b;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1000px) {
+    .two-column-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .three-column-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .content-card.sticky {
+        position: static;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 800px) {
+    .page {
+        width: calc(100% - 16px);
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 600px) {
+    .page {
+        padding: 1rem;
+    }
+
+    .stat-cards-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+}
+
+/* ===== DARK MODE ===== */
+/* Dark mode adjustments are primarily handled via CSS variables in App.css */
+/* Specific overrides can be added here if necessary */
+body.dark .data-table th {
+    background: #3730a3;
+    /* darker indigo for better contrast */
+    color: #e0e7ff;
+}
+
+body.dark .data-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Fix for date input icon visibility in dark mode */
+body.dark input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
